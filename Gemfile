@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.4'
+ruby '2.7.2'
 
 gem 'rails', '~> 7.0.2.3'
 
@@ -13,7 +13,7 @@ gem "puma", "~> 5.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
-
+gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -38,12 +38,15 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'rspec-rails', '~> 4.0'
+  gem 'factory_bot_rails', '~> 4.0'
+  gem 'pry'
+  gem 'capybara'
+  gem 'rubocop-rspec', require: false
 end
 
 group :test do
-  gem 'factory_bot_rails', '~> 4.0'
-  gem 'shoulda-matchers', '~> 3.1'
+  gem 'rspec-rails', '~> 4.0'
+  gem 'shoulda-matchers'
   gem 'faker'
   gem 'database_cleaner'
 end
